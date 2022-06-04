@@ -1,0 +1,163 @@
+@import url('https://fonts.googleapis.com/css2?family=Overpass:wght@400;700&display=swap');
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+:root {
+  --background-navy-blue: #212731;
+  --background-black: #141519;
+  --primary-orange: #f17730;
+  --primary-grey: #acb0b4;
+  --secondary-black: #262f38;
+  --light-grey: #7c8898;
+  --primary-white: #fff;
+  --transition: all 0.4s ease-in-out;
+}
+/* ----------general styles -------- */
+a {
+  text-decoration: none;
+}
+ul {
+  list-style: none;
+}
+p{
+    font-size: 15px;
+    font-weight: lighter;
+}
+h3{
+    font-weight: bold;
+}
+body {
+  background-color: var(--background-black);
+  cursor: pointer;
+font-family: 'Overpass', sans-serif;
+}
+.ratings {
+  height: 100vh;
+  width: 100%;
+  padding: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.card-wrapper {
+  width: 35%;
+  margin: auto;
+  background-color: var(--background-navy-blue);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--primary-white);
+  flex-direction: column;
+  border-radius: 20px;
+}
+.rate-card {
+  padding: 30px;
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+  justify-content: start;
+}
+
+ .rate-icon i {
+  padding: 12px;
+  background-color: var(--secondary-black);
+  border-radius: 50%;
+  font-size: 20px;
+  border-radius: 50%;
+  color: var(--primary-orange);
+}
+.rate-card p {
+  width: 100%;
+  margin: 10px 0;
+  font-weight: lighter;
+}
+.buttons-wrapper {
+  width: 100%;
+  margin: 10px 0;
+  display: flex;
+  justify-content: space-between;
+}
+.btn-rate{
+  padding: 12px 18px;
+  border-radius: 50%;
+  background-color: var(--secondary-black);
+  color: var(--light-grey);
+  transition: var(--transition);
+}
+.btn-rate:hover {
+  color: var(--primary-white);
+  background-color: var(--primary-orange);
+}
+
+.btn-rate input{
+    background:none;
+    outline: none;
+    border: none;
+    width: 10px;
+    cursor: pointer !important; 
+}
+.btn-active {
+  color: var(--primary-white);
+  background-color: var(--light-grey);
+}
+.btn-submit {
+    width: 100%;
+  padding: 8px;
+  margin: 10px 0 0 0;
+  background-color: var(--primary-orange);
+  color: var(--primary-white);
+  text-transform: uppercase;
+  outline: none;
+  border: none;
+  border-radius: 20px;
+  letter-spacing: 1.5px;
+  font-size: 12px;
+  transition: var(--transition);
+  
+}
+.btn-submit:hover{
+   background-color: var(--primary-white);
+    color: var(--primary-orange);
+}
+
+.thank-card{
+    padding: 30px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content:center;
+}
+.img-wrapper{
+    margin: 10px 0px;
+}
+.img-wrapper img{
+    width: 150px;
+}
+.rate-info{
+    margin: 10px 0px 12px 0px;
+    padding: 5px 20px;
+    border-radius: 20px;
+    background-color: var(--secondary-black);
+    color: var(--primary-orange);
+}
+.thank-card p{
+    text-align: center;
+    font-weight: lighter;
+}
+.card-active{
+    display: none;
+}
+@media screen and (max-width: 912px) {
+  .card-wrapper {
+    width: 50%;
+  }
+}
+@media screen and (max-width: 514px) {
+  .card-wrapper {
+    width: 100%;
+  }
+}

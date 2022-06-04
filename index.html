@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- displays site properly based on user's device -->
+
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="./images/favicon-32x32.png"
+    />
+
+    <!-- font awesome -->
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.1.1/css/fontawesome.min.css"
+      integrity="sha384-zIaWifL2YFF1qaDiAo0JFgsmasocJ/rqu7LKYH8CoBEXqGbb9eO+Xi3s6fQhgFWM"
+      crossorigin="anonymous"
+    />
+
+    <!-- boxicons -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/boxicons/2.1.0/css/boxicons.min.css"
+    />
+
+    <!-- bootstrap -->
+    <!-- Latest compiled and minified CSS -->
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap@3.3.7/dist/css/bootstrap.min.css"
+      integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u"
+      crossorigin="anonymous"
+    />
+
+    <!-- Optional theme -->
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap@3.3.7/dist/css/bootstrap-theme.min.css"
+      integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp"
+      crossorigin="anonymous"
+    />
+
+    <title>Frontend Mentor | Interactive rating component</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <!-- ratings--- section -->
+    <section class="ratings">
+      <div class="card-wrapper">
+        <div class="rate-card">
+          <div class="rate-icon">
+            <i class="bx bxs-star"></i>
+          </div>
+          <h3>How did we do?</h3>
+          <p>
+            Please let us know how we did with your support request.All feedback
+            is appreciated to help us improve our offering!
+          </p>
+          <form>
+            <div class="buttons-wrapper">
+              <div class="btn-rate">
+                <input type="text" value="1" disabled />
+              </div>
+              <div class="btn-rate">
+                <input type="text" value="2" disabled />
+              </div>
+              <div class="btn-rate">
+                <input type="text" value="3" disabled />
+              </div>
+              <div class="btn-rate">
+                <input type="text" value="4" disabled />
+              </div>
+              <div class="btn-rate btn-active">
+                <input type="text" value="5" disabled />
+              </div>
+            </div>
+
+            <button type="submit" class="btn-submit">Submit</button>
+          </form>
+        </div>
+        <div class="thank-card card-active">
+          <div class="img-wrapper">
+            <img src="./images/illustration-thank-you.svg" alt="atm-machine" />
+          </div>
+          <div class="rate-info">You selected 4 out of 5</div>
+          <h3>Thank you!</h3>
+          <p>
+            We appreciate you for taking the time to give a rating.If you ever
+            need more support,don't hesitate to get in touch!
+          </p>
+        </div>
+      </div>
+    </section>
+    <script>
+      const rateCard = document.querySelector(".rate-card");
+      const thankCard = document.querySelector(".thank-card");
+      const btnSubmit = document.querySelector(".btn-submit");
+
+      document.querySelector("form").addEventListener("submit", (e) => {
+        e.preventDefault();
+
+        const input = document.querySelector('input[type="text"');
+        console.log(input.value);
+        thankCard.classList.remove("card-active");
+        rateCard.classList.add("card-active");
+      });
+    </script>
+  </body>
+</html>
