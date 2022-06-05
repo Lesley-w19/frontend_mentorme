@@ -62,7 +62,7 @@
           <form>
             <div class="buttons-wrapper">
               <div class="btn-rate">
-                <input type="text" value="1" disabled />
+                <input type="text" value="1" />
               </div>
               <div class="btn-rate">
                 <input type="text" value="2" disabled />
@@ -73,7 +73,7 @@
               <div class="btn-rate">
                 <input type="text" value="4" disabled />
               </div>
-              <div class="btn-rate btn-active">
+              <div class="btn-rate">
                 <input type="text" value="5" disabled />
               </div>
             </div>
@@ -85,28 +85,47 @@
           <div class="img-wrapper">
             <img src="./images/illustration-thank-you.svg" alt="atm-machine" />
           </div>
-          <div class="rate-info">You selected 4 out of 5</div>
+          <div class="rate-info">
+            You selected <span class="rate-value">0</span> out of 5
+          </div>
           <h3>Thank you!</h3>
           <p>
             We appreciate you for taking the time to give a rating.If you ever
             need more support,don't hesitate to get in touch!
           </p>
+         
         </div>
       </div>
     </section>
     <script>
       const rateCard = document.querySelector(".rate-card");
       const thankCard = document.querySelector(".thank-card");
-      const btnSubmit = document.querySelector(".btn-submit");
+      const btnRate = document.querySelectorAll(".btn-rate");
 
+      // add active class onclick to the rating buttons
+      //1. remove active in all btns.
+      //2.add active class to the selected btn
+
+      btnRate.forEach((button) => {
+        button.addEventListener("click", (e) => {
+          e.preventDefault();
+          btnRate.forEach((btn) => btn.classList.remove("btn-active"));
+          button.classList.add("btn-active");
+
+          const value = button.childNodes[1].value;
+
+          document.querySelector(".rate-value").innerHTML = value;
+        });
+      });
+
+      //  <!-- change between two cards -->
       document.querySelector("form").addEventListener("submit", (e) => {
         e.preventDefault();
-
-        const input = document.querySelector('input[type="text"');
-        console.log(input.value);
         thankCard.classList.remove("card-active");
         rateCard.classList.add("card-active");
       });
+
+    
     </script>
   </body>
 </html>
